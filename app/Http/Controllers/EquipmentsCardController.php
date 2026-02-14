@@ -12,7 +12,7 @@ class EquipmentsCardController extends Controller
      */
     public function index()
     {
-        //
+        return "سيتم الاضافة لاحقا " ; 
     }
 
     /**
@@ -20,7 +20,7 @@ class EquipmentsCardController extends Controller
      */
     public function create()
     {
-        //
+         return inertia("EquipmentsCards/Create") ; 
     }
 
     /**
@@ -28,8 +28,16 @@ class EquipmentsCardController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+           $data = $request->validate([
+        'name' => ['required', 'string', 'max:255', 'unique:equipments_cards,name'],
+    ]);
+
+        EquipmentsCard::create([
+            'name' => $data['name'],
+        ]);
+
+        return redirect()->back();
+     }
 
     /**
      * Display the specified resource.

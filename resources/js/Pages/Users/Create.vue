@@ -23,7 +23,7 @@ const form = useForm({
  
  
  
-  user_level: '',
+  role: '',
 });
 
 function Store() {
@@ -83,16 +83,16 @@ function Store() {
        <!-- مستوى المستخدم -->
        <div class="md:col-span-2">
             <label class="block text-sm font-medium text-gray-700">الصلاحية <span class="text-red-500">*</span></label>
-            <el-select v-model="form.user_level" placeholder="اختر الصلاحية" class="w-full" filterable>
+            <el-select v-model="form.role" placeholder="اختر الصلاحية" class="w-full" filterable>
               <el-option
-                v-for="(label, key) in constants.user_level"
+                v-for="(label, key) in constants.role"
                 :key="key"
                 :label="label"
                 :value="parseInt(key)"
-                v-show="parseInt(key) >= user.user_level"
+                v-show="parseInt(key) >= user.role"
               />
             </el-select>
-            <p v-if="form.errors.user_level" class="error-text">{{ form.errors.user_level }}</p>
+            <p v-if="form.errors.role" class="error-text">{{ form.errors.role }}</p>
           </div>
 
           

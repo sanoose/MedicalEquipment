@@ -1,12 +1,12 @@
 <?php
  
-use App\Http\Controllers\Auth\AuthController; 
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EquipmentsCardController;
 use App\Http\Controllers\HomeController;
- 
- 
+use App\Http\Controllers\SuppliesCardController;
 use App\Http\Controllers\UserController;
- 
- 
+use App\Models\EquipmentsCard;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
  
@@ -68,7 +68,9 @@ Route::middleware([
         'is_super_admin', 
         ])->group(function () { 
        
- 
+        Route::resource("Clients" , ClientController::class)->names("Clients") ;
+        Route::resource("EquipmentsCards" , EquipmentsCardController::class)->names("EquipmentsCards") ;
+        Route::resource("SuppliesCards" , SuppliesCardController::class)->names("SuppliesCards") ;
            
          });
 

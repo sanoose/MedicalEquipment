@@ -1,5 +1,5 @@
  
-export const user_level = {
+export const role = {
     '1': 'سوبر أدمن',
     '2': ' أدمن ',
     '3': 'مستخدم',
@@ -8,7 +8,20 @@ export const user_level = {
  
  
 
+ export const client_type =  {
+    '1': 'منشأة صحية',
+    '2': ' شركة ',
  
+ 
+  }; 
+ 
+ export const client_subtype =  {
+    '1': 'مستشفى',
+    '2': ' مصحة ',
+    '3': 'جهة عامة',
+    '4': 'جهة خاصة',
+ 
+  }; 
 
 export const insurance_years = [1, 2, 3];
 

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class SuppliesCard extends Model
 {
-    //
+         protected $guarded = [] ;   
 }

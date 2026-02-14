@@ -13,10 +13,10 @@ const props = defineProps({
 })
 
 const currentUrl = computed(() => page.url)
-const userLevel = computed(() => props.user.user_level)
+const role = computed(() => props.user.role)
 
-const hasPermission = (allowedLevels) => {
-   return allowedLevels.includes(userLevel.value)
+const hasPermission = (allowedRole) => {
+   return allowedRole.includes(role.value)
 }
 
 const menuItems = ref([
@@ -24,22 +24,51 @@ const menuItems = ref([
         name: 'لوحة التحكم', 
         path: 'Dashboard', 
         icon: 'home',
-        allowedLevels: [1, 2, 3, 4]
+        allowedRole: [1, 2, 3, 4]
       },
    
       { 
         name: 'إدارة المستخدمين', 
         icon: 'users',
-        allowedLevels: [1, 2, 3],
+        allowedRole: [1, 2, 3],
         subItems: [
           { name: 'اضافة مستخدم', path: 'Users.Create', icon: 'plus' },
           { name: 'عرض المستخدمين', path: 'Users.Index', icon: 'eye' }
         ]
       },
      
+      { 
+        name: 'إدارة العملاء', 
+        icon: 'fa-hospital',
+        allowedRole: [1, 2, 3],
+        subItems: [
+          { name: 'اضافة عميل جديد', path: 'Clients.create', icon: 'plus' },
+          { name: 'عرض بيانات العملاء', path: 'Clients.index', icon: 'eye' }
+        ]
+      },
+        { 
+          name: 'إدارة المعدات ',
+          icon: 'tools',
+          allowedRole: [1, 2, 3],
+          subItems: [
+            { name: 'إضافة جهاز جديد', path: 'EquipmentsCards.create', icon: 'plus' },
+            { name: 'عرض الأجهزة', path: 'EquipmentsCards.index', icon: 'eye' }
+          ]
+        },
+     
+        { 
+          name: 'إدارة المستلزمات ',
+          icon: 'first-aid',
+          allowedRole: [1, 2, 3],
+          subItems: [
+            { name: 'إضافة مستلزم جديد', path: 'SuppliesCards.create', icon: 'plus' },
+            { name: 'عرض المستلزمات', path: 'SuppliesCards.index', icon: 'eye' }
+          ]
+        },
+     
  
 
-      { name: 'تسجيل الخروج', path: 'logout', icon: 'reply'  ,   method: 'post'  ,   allowedLevels: [1, 2 , 3, 4 ],  },
+      { name: 'تسجيل الخروج', path: 'logout', icon: 'reply'  ,   method: 'post'  ,   allowedRole: [1, 2 , 3, 4 ],  },
  
 
  ])
@@ -67,24 +96,20 @@ const ToggleSubmenu = (index) => {
     <!-- Logo Section -->
     <div class="flex items-center justify-center h-20">
       <img src="/logo/logo.png" alt="Logo" class="h-16" />
-            <p class="font-bold">  {{ props.user.company?.name }}</p>
+            <p class="font-bold">  {{ props.user.name }}</p>
     </div>
 
     <!-- User Info -->
-    <div class="text-center">
-
- 
+    <div class="text-center"> 
       <p class="font-bold">الاسم : {{ props.user.name }}</p>
-      <p class="text-sm">الرتبة: {{ constants.user_level[props.user.user_level] }}</p>
- 
+      <p class="text-sm">الرتبة: {{ constants.role[props.user.role] }}</p>
     </div>
-
-
     <nav>
       <ul class="space-y-2">
         <template v-for="(menuItem, index) in menuItems" :key="index">
           <!-- التحقق من الصلاحية قبل العرض -->
-          <template v-if="hasPermission(menuItem.allowedLevels)">
+          <template v-if="hasPermission(menuItem.allowedRole)">
+         
             <!-- العناصر ذات القوائم الفرعية -->
             <li v-if="menuItem.subItems">
               <button 

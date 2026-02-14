@@ -31,7 +31,7 @@
           <!-- Dropdown Menu -->
           <div
             v-if="is_open"
-            class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-[#673ab74f] ring-1 ring-black ring-opacity-5 focus:outline-none"
+            class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-[#ffffff4f] ring-1 ring-black ring-opacity-3 focus:outline-none"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="menu-button"

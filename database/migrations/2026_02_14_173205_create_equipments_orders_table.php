@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('equipments_orders', function (Blueprint $table) {
-               $table->id();
+            $table->id();
             $table->unsignedBigInteger('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients') ->onDelete('cascade') ->onUpdate('cascade'); 
            
@@ -22,9 +22,9 @@ return new class extends Migration
             $table->text("note");
            $table->dateTime('order_date')->useCurrent();
  
-          $table->unsignedTinyInteger("equipment_order_status")->comment("#1 onhold  #2  accepted  #3 canceled  ");  // 1 active   2 not active 
-      
+            $table->unsignedTinyInteger("equipment_order_status")->comment("#1 onhold  #2  accepted  #3 canceled  ");  // 1 active   2 not active 
         
+            
             $table->softDeletes();
             $table->timestamps();
         });

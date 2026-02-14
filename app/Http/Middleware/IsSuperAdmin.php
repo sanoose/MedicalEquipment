@@ -13,7 +13,7 @@ class IsSuperAdmin
     {
         $user = Auth::user();
 
-        if (!$user || !in_array($user->user_level, [1 ])) {
+        if (!$user || !in_array($user->role, [1 ])) {
             abort(403, 'غير مصرح لك بالدخول إلى هذه الصفحة.');
         }
     

@@ -19,7 +19,7 @@ class IsAdmin
     {
         $user = Auth::user();
         // if admin or super
-        if (!$user || !in_array($user->user_level, [1, 2])) {
+        if (!$user || !in_array($user->role, [1, 2])) {
             abort(403, 'غير مصرح لك بالدخول إلى هذه الصفحة.');
         }
     

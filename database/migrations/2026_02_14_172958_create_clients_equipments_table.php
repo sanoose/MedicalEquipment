@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //  تخزين معدات العملاء 
         Schema::create('clients_equipments', function (Blueprint $table) {
               $table->id();
 

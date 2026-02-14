@@ -76,7 +76,7 @@ const ProfileUpdate = () => {
                 <h1 class="text-2xl font-bold text-gray-800">{{ user.name }}</h1>
                 <!-- <p class="text-gray-600">{{ user.email }}</p> -->
                 <span class="inline-block mt-2 px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">
-                    {{ constants.user_level[user.user_level] }}
+                    {{ constants.role[user.role] }}
                      
                 </span>
               </div>

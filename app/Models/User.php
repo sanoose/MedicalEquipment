@@ -64,8 +64,8 @@ class User extends Authenticatable
                 });
             })
    
-            ->when($filters['user_level'] ?? null, function ($q, $level) {
-                $q->where('user_level', $level);
+            ->when($filters['role'] ?? null, function ($q, $level) {
+                $q->where('role', $level);
             });
     }
 
@@ -79,7 +79,7 @@ public function user()
 
 public function IsSuperAdmin(): bool
 {
-    return $this->user_level === 1;
+    return $this->role === 1;
 }
 
 }

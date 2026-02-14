@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //  صيانة المعدات 
         Schema::create('equipments_maintenances', function (Blueprint $table) {
                $table->id();
             $table->unsignedBigInteger('client_id')->nullable();

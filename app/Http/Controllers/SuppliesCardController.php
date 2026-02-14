@@ -12,7 +12,7 @@ class SuppliesCardController extends Controller
      */
     public function index()
     {
-        //
+         return "سيتم الاضافة لاحقا " ; 
     }
 
     /**
@@ -20,16 +20,24 @@ class SuppliesCardController extends Controller
      */
     public function create()
     {
-        //
+        return inertia ("SuppliesCards/Create") ; 
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-    }
+        {
+            $data = $request->validate([
+                'name' => ['required', 'string', 'max:255', 'unique:supplies_cards,name'],
+            ]);
+
+            SuppliesCard::create([
+                'name' => $data['name'],
+            ]);
+
+            return redirect()->back();
+        }
 
     /**
      * Display the specified resource.

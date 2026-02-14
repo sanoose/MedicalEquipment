@@ -59,7 +59,7 @@ class UserController extends Controller
 public function Index(Request $request)
 {
     $user = Auth::user();
-    $filters = $request->only(['search',   'user_level']);
+    $filters = $request->only(['search',   'role']);
     $per_page = $request->input('per_page', 5);
 
     $query = User::filter($filters); 
@@ -89,7 +89,7 @@ public function Index(Request $request)
         'password' => ['required', 'string', 'confirmed'],
         'phone' => ['required', 'string', 'max:20'],
         'location' => ['nullable', 'string', 'max:500'],
-        'user_level' => ['required', Rule::in([1, 2, 3, 4])],
+        'role' => ['required', Rule::in([1, 2, 3, 4])],
  
         'added_by' => ['nullable', 'exists:users,id'],
     ]);
@@ -100,7 +100,7 @@ public function Index(Request $request)
     $user->password = Hash::make($req['password']);
     $user->phone = $req['phone'];
     $user->location = $req['location'] ?? null;
-    $user->user_level = $req['user_level'];
+    $user->role = $req['role'];
 
     $user->added_by =   Auth::user()->id ;
     $user->save();
@@ -128,7 +128,7 @@ public function Update(Request $request)
         'password' => ['nullable', 'string',  'confirmed'],
         'phone' => ['required', 'string', 'max:20'],
         'location' => ['nullable', 'string', 'max:500'],
-        'user_level' => ['required', Rule::in([1, 2, 3, 4])],
+        'role' => ['required', Rule::in([1, 2, 3, 4])],
 
     ]);
 
@@ -136,7 +136,7 @@ public function Update(Request $request)
     $user->email = $validated['email'];
     $user->phone = $validated['phone'];
     $user->location = $validated['location'] ?? null;
-    $user->user_level = $validated['user_level'];
+    $user->role = $validated['role'];
 
     if (!empty($validated['password'])) {
         $user->password = Hash::make($validated['password']);

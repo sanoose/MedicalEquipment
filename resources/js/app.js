@@ -24,8 +24,8 @@ import { faEnvelope, faUser, faLock   , faMobileRetro  , faCircleCheck     , faG
   faMapMarkedAlt  , faMapLocation  , faBriefcase , faGraduationCap ,  faChalkboard,     faUserGraduate,         faUsersBetweenLines,     faLaptopCode     , faPlus  , faEdit 
   , faEllipsisVertical  , faPrint  ,  faFileCircleQuestion,  faChartLine, faCarSide, faCity, faTags, faFileSignature, faPalette, faImage  ,
  
-  faFileContract,
- 
+  faFileContract, faHospital , 
+  faFirstAid ,
   faFolderOpen,
   faCarCrash,
   faTools,
@@ -38,8 +38,8 @@ import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
 
 
 
-library.add(faEnvelope, faUser , faUsers , faLock , faMobileRetro , faCircleCheck , faFileDownload  , faGraduationCap  , faArrowRight    , faBuilding   , faLink  , faCommentAlt  , faArrowLeft   ,    faChartBar, faChartPie,    faFileLines  ,
-    faFileAlt  ,   faHome, faGear , faTriangleExclamation   , faMapMarkedAlt , faMapLocation ,  faBriefcase ,   faChalkboard,     faUserGraduate,         faUsersBetweenLines,     faLaptopCode    ,
+library.add(faEnvelope, faHospital , faUser , faUsers , faLock , faMobileRetro , faCircleCheck , faFileDownload  , faGraduationCap  , faArrowRight    , faBuilding   , faLink  , faCommentAlt  , faArrowLeft   ,    faChartBar, faChartPie,    faFileLines  ,
+    faFileAlt  ,    faFirstAid , faHome, faGear , faTriangleExclamation   , faMapMarkedAlt , faMapLocation ,  faBriefcase ,   faChalkboard,     faUserGraduate,         faUsersBetweenLines,     faLaptopCode    ,
     faThLarge,     faReply,     faChevronDown,     faFileInvoiceDollar ,     faEye,     faFileText ,  faPlus , faEdit ,  faEllipsisVertical , faPrint ,   faFileCircleQuestion,  faChartLine, faCarSide, faCity, faTags, faFileSignature, faPalette,
     faCalendarAlt, faFlag, faUserClock    , faSearch  , faWhatsapp , faHand  , faGlobe, faCheckCircle, faTimesCircle, faHourglassHalf, faIdCard , faImage  ,   faFileContract, faFolderOpen, faCarCrash, faTools
    , faTwitter, faLinkedinIn, faFacebookF, faInstagram, faYoutube , faGauge ,  faStarSolid , faStarRegular  , faTrashCan     ,faXmark   , faPaperPlane ,  faClipboardCheck ,  faCheckDouble  ,  faPlugCircleCheck  ,  faCheck   ) ; 
