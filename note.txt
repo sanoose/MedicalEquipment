@@ -1,0 +1,5 @@
+main color
+#295b9c
+#c0af6d
+#ffffff
+#3a6cb0

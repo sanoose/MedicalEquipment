@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+/* @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap'); */
+/* @import url('https://fonts.cdnfonts.com/css/tajawal'); */
+
+/* @import 'flowbite'; */
+/* <!-- #9ca3af  gray   #71717a   zinc   #818cf8 indigo   #38bdf8 sky  
+ #34d399  emerald #2dd1bf teal   #fb7185  rose  #fdba74  orange  #3b82f6  blue   --> */
+/* @theme {
+  --color-primary : #e44a40 ; 
+  --main-text-color: #000000 ;
+  --active-bg-color : #fb7185  ;  
+  --links-hover-bg-color : #ff2056  ;  
+} */
+ * {
+  font-family: 'Tajawal', sans-serif;
+ }
+:root {
+    --color-primary: #e44a40;
+    --main-text-color: #000000;
+    --active-bg-color: #fb7185;
+    --links-hover-bg-color: #ff2056;
+
+    /*  logo syle  */
+
+    /* --primary-dark: #0A2E5A;
+    --primary-main: #0d3b7a;
+    --primary-light: #1a56a5;
+    --gold-main: #D4AF37;
+    --gold-light: #f0d37d;
+    --gold-dark: #b8952c;
+    --white: #ffffff;
+    --off-white: #f8f8f8;
+    --accent-colors: #2a5c9d, #3a6cb0, #4a7cc3, #5a8cd6, #6a9ce9, #7aacfc;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.15);
+    --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --border-radius: 24px; */
+/* agenda variables  */
+
+--primary-color: #2c5f8b;
+--secondary-color: #f4b350;
+--accent-color: #e74c3c;
+--light-color: #f8f9fa;
+--dark-color: #2c3e50;
+--text-color: #333;
+--border-radius: 12px;
+--box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  }
+
+/* .dark @theme {
+  --text-color: #fff;
+} */
+
+.btn-primary {
+  @apply font-medium rounded bg-blue-600 hover:bg-blue-700 text-white px-4 py-2;
+}
+
+.btn-scondary {
+  @apply text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ;
+}
+
+.nav_links {
+  @apply   block px-4 py-2 text-sm hover:bg-[var(--links-hover-bg-color)]  hover:text-gray-900 text-right 
+}
+
+.aside_links {
+  @apply   flex items-center p-2 text-base font-normal  rounded-lg hover:bg-[var(--links-hover-bg-color)] 
+}
+
+.error-text {
+  @apply mt-1 text-sm text-red-600  ;
+}
+
+:root {
+/* 
+  --main_background :  red  ;
+  --body_background : white ;
+  --checked_color : rgb(0, 255, 0) ;
+  --main_color : black ;
+  --sun : red ;
+  --hover_color : #00b6b3 ;
+  --radio_color : #ff0000 ;
+  --danger : red ; */
+  /* --img : url('/Images/light_mode.jpg') ;  */
+}
+
+
+
+body , aside {
+  background-image:  var(--img);
+  background-size: cover; /* لتغطية كامل المساحة */
+  background-repeat: no-repeat; /* لمنع تكرار الصورة */
+}
+aside {
+  overflow: auto;
+}
+/*  el + select  */
+.el-select__selection , .el-select__input  {
+  text-align: right;
+  padding: 5px;
+}
+
+.el-scrollbar__view {
+ text-align: right;
+}
+/* el select end */
+
+.outer_container  {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+} 
+.outer_container  div #table { 
+    width: 100% !important;
+    border-collapse: collapse;
+    max-width: 100%;
+
+}
+.outer_container  div #table tbody td ,    .outer_container  div #table thead  th {
+ border: 1px solid black;
+}
+
+
+.dropdown_container {
+   width: 100px ;
+}
+
+.table_container {
+   height: 50vh;
+   background-color: white;
+}
+
+
+
