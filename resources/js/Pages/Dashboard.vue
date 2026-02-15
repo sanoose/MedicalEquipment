@@ -26,8 +26,8 @@ const props = defineProps({
               <FontAwesomeIcon :icon="['fas', 'file-contract']" class="text-blue-600 text-2xl" />
             </div>
             <div>
-              <h3 class="text-lg font-medium text-gray-500">إجمالي   البطيخ 1</h3>
-              <p class="text-3xl font-bold text-gray-800">{{ "/" }}</p>
+              <h3 class="text-lg font-medium text-gray-500">إجمالي طلبات المستلزمات</h3>
+              <p class="text-3xl font-bold text-gray-800">{{  0  }}</p>
             </div>
           </div>
         </div>
@@ -39,8 +39,8 @@ const props = defineProps({
               <FontAwesomeIcon :icon="['fas', 'building']" class="text-indigo-600 text-2xl" />
             </div>
             <div>
-              <h3 class="text-lg font-medium text-gray-500">إجمالي البطيخ</h3>
-              <p class="text-3xl font-bold text-gray-800">{{   "/"  }}</p>
+              <h3 class="text-lg font-medium text-gray-500">إجمالي العملاء</h3>
+              <p class="text-3xl font-bold text-gray-800">{{   0  }}</p>
             </div>
           </div>
         </div>
@@ -52,8 +52,8 @@ const props = defineProps({
               <FontAwesomeIcon :icon="['fas', 'users']" class="text-amber-600 text-2xl" />
             </div>
             <div>
-              <h3 class="text-lg font-medium text-gray-500">إجمالي البطيخ 2 </h3>
-              <p class="text-3xl font-bold text-gray-800">{{   "/"  }}</p>
+              <h3 class="text-lg font-medium text-gray-500">إجمالي طلبات الصيانة </h3>
+              <p class="text-3xl font-bold text-gray-800">{{   0  }}</p>
             </div>
           </div>
         </div>

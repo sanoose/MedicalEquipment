@@ -3,8 +3,11 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EquipmentsCardController;
+use App\Http\Controllers\EquipmentsMaintenanceController;
+use App\Http\Controllers\EquipmentsOrderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuppliesCardController;
+use App\Http\Controllers\SuppliesOrderController;
 use App\Http\Controllers\UserController;
 use App\Models\EquipmentsCard;
 use Illuminate\Support\Facades\Route;
@@ -68,9 +71,19 @@ Route::middleware([
         'is_super_admin', 
         ])->group(function () { 
        
+        Route::post("Clients/StoreQuick" , [ClientController::class , "StoreQuick"])->name("Clients.StoreQuick") ;
         Route::resource("Clients" , ClientController::class)->names("Clients") ;
         Route::resource("EquipmentsCards" , EquipmentsCardController::class)->names("EquipmentsCards") ;
         Route::resource("SuppliesCards" , SuppliesCardController::class)->names("SuppliesCards") ;
+        Route::get("EquipmentsMaintenances/ChangeStatus" , [ EquipmentsMaintenanceController::class , "ChangeStatus"] )->name("EquipmentsMaintenances.ChangeStatus") ;
+        Route::resource("EquipmentsMaintenances" , EquipmentsMaintenanceController::class)->names("EquipmentsMaintenances") ;
+
+        Route::get('EquipmentsOrders/ChangeStatus', [\App\Http\Controllers\EquipmentsOrderController::class, 'ChangeStatus'])
+          ->name('EquipmentsOrders.ChangeStatus');
+        Route::resource("EquipmentsOrders" , EquipmentsOrderController::class)->names("EquipmentsOrders") ;
+       
+        Route::get('SuppliesOrders/ChangeStatus', [\App\Http\Controllers\SuppliesOrderController::class, 'ChangeStatus'])->name("SuppliesOrders.ChangeStatus") ; 
+        Route::resource("SuppliesOrders" , SuppliesOrderController::class)->names("SuppliesOrders") ;
            
          });
 

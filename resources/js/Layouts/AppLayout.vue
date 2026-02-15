@@ -18,7 +18,7 @@ const toggleAside = () => {
 
 <template>
   <Loading /> 
-  <div dir="rtl" class="min-h-screen     text-[var(--main-text-color)]   ">
+  <div dir="rtl" class="min-h-screen        ">
     <Navbar
     :user="page.props.auth?.user"   :constants = "constants"
       @toggle-aside="toggleAside"

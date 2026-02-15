@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // طلب معدات جديدة
         Schema::create('equipments_orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('client_id')->nullable();
+            $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients') ->onDelete('cascade') ->onUpdate('cascade'); 
            
           
-            $table->text("note");
+            $table->text("note")->nullable() ;
            $table->dateTime('order_date')->useCurrent();
  
             $table->unsignedTinyInteger("equipment_order_status")->comment("#1 onhold  #2  accepted  #3 canceled  ");  // 1 active   2 not active 

@@ -66,6 +66,34 @@ const menuItems = ref([
           ]
         },
      
+        { 
+          name: 'إدارة طلبات الصيانة  ',
+          icon: 'gear',
+          allowedRole: [1, 2, 3],
+          subItems: [
+            { name: 'إضافة طلب جديد', path: 'EquipmentsMaintenances.create', icon: 'plus' },
+            { name: 'عرض الطلبات', path: 'EquipmentsMaintenances.index', icon: 'eye' }
+          ]
+        },
+        { 
+          name: 'إدارة طلبات المعدات   ',
+          icon: 'clipboard-check',
+          allowedRole: [1, 2, 3],
+          subItems: [
+            { name: 'إضافة طلب جديد', path: 'EquipmentsOrders.create', icon: 'plus' },
+            { name: 'عرض الطلبات', path: 'EquipmentsOrders.index', icon: 'eye' }
+          ]
+        },
+        { 
+          name: 'إدارة طلبات المستلزمات    ',
+          icon: 'hand-holding-medical',
+          allowedRole: [1, 2, 3],
+          subItems: [
+            { name: 'إضافة طلب جديد', path: 'SuppliesOrders.create', icon: 'plus' },
+            { name: 'عرض الطلبات', path: 'SuppliesOrders.index', icon: 'eye' }
+          ]
+        },
+     
  
 
       { name: 'تسجيل الخروج', path: 'logout', icon: 'reply'  ,   method: 'post'  ,   allowedRole: [1, 2 , 3, 4 ],  },
@@ -94,11 +122,33 @@ const ToggleSubmenu = (index) => {
     }"
   >
     <!-- Logo Section -->
-    <div class="flex items-center justify-center h-20">
+    <div class="flex flex-col  items-center justify-center   h-20">
       <img src="/logo/logo.png" alt="Logo" class="h-16" />
-            <p class="font-bold">  {{ props.user.name }}</p>
-    </div>
+     
 
+      
+
+<div class="relative inline-block">
+  <!-- توهج خلفي ثابت وأنيق -->
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-500/20 to-cyan-500/20 
+              blur-2xl rounded-lg"></div>
+  
+  <!-- توهج أمامي ناعم جداً -->
+  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
+              blur-sm rounded-lg"></div>
+  
+  <!-- النص -->
+  <p class="text-sm text-center bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 
+            bg-clip-text text-transparent font-medium relative z-10
+            drop-shadow-[0_0_12px_rgba(34,211,238,0.5)]">
+    الهيئة العامة للمعدات والمستلزمات والأجهزة الطبية
+  </p>
+</div>
+
+
+
+    </div>
+    <br>
     <!-- User Info -->
     <div class="text-center"> 
       <p class="font-bold">الاسم : {{ props.user.name }}</p>
@@ -192,3 +242,4 @@ const ToggleSubmenu = (index) => {
     </nav>
   </aside>
 </template>
+

@@ -18,7 +18,7 @@ return new class extends Migration
            
           
             $table->dateTime("order_date")->default(now());
-            $table->text("note");
+            $table->text("note")->nullable();
         
           $table->unsignedTinyInteger("supply_order_status")->comment("#1 onhold  #2  accepted  #3 canceled  ");  // 1 active   2 not active 
       

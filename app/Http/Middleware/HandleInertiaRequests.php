@@ -40,6 +40,10 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
 {
     return array_merge(parent::share($request), [
+                    'flash' => function () use ($request) {
+                return ['new_client' => $request->session()->get('new_client'),];
+            } 
+              ,
         'auth' => [
             'user' => function () {
                 $auth = Auth::user();
@@ -47,9 +51,6 @@ class HandleInertiaRequests extends Middleware
                 if (!$auth) {
                     return null; // لم يتم تسجيل الدخول
                 }
-
- 
-
                 return $auth; // fallback إذا لم ينطبق أي شرط
             }
         ],

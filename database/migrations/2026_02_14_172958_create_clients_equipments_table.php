@@ -13,7 +13,7 @@ return new class extends Migration
     {
         //  تخزين معدات العملاء 
         Schema::create('clients_equipments', function (Blueprint $table) {
-              $table->id();
+             $table->id();
 
             $table->unsignedBigInteger('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients') ->onDelete('cascade') ->onUpdate('cascade'); 
@@ -22,11 +22,7 @@ return new class extends Migration
             $table->string("description");
             $table->string("manufacturer");
             $table->string("serial_number");
-          
             $table->text("note");
-  
-      
-
             $table->softDeletes();
             $table->timestamps();
         });

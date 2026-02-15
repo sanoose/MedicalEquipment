@@ -75,7 +75,28 @@ class ClientController extends Controller
 
     return redirect()->back();
 }
+ public function StoreQuick(Request $req)
+{
+    // نفس منطق الحفظ “السريع” داخل أي صفحة (مودال) — منشأة صحية فقط
+    $data = $req->validate([
+        'client_subtype' => ['required', 'integer', 'in:1,2'], // مستشفى/مصحة فقط
+        'entity_name'    => ['required', 'string', 'max:255'],
+        'client_name'    => ['required', 'string', 'max:255'],
+        'phone'          => ['required', 'string', 'max:50'],
+        'note'           => ['nullable', 'string'],
+    ]);
 
+    $client = \App\Models\Client::create([
+        'client_type'    => 1, // تثبيت: منشأة صحية
+        'client_subtype' => $data['client_subtype'],
+        'entity_name'    => $data['entity_name'],
+        'client_name'    => $data['client_name'],
+        'phone'          => $data['phone'],
+        'note'           => $data['note'] ?? null,
+    ]);
+
+    return back()->with('new_client', $client);
+}
     /**
      * Display the specified resource.
      */
